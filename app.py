@@ -6,23 +6,22 @@ import gdown
 import os
 
 
-
-MOVIES_FILE_ID = "https://drive.google.com/file/d/1l1E8VsQdMyxMumP0Y_xjsmqe8L9TW7i5/view?usp=sharing"
-SIMILARITY_FILE_ID = "https://drive.google.com/file/d/11inXxpuItE9VtNAzWideUADMTzMewVvT/view?usp=sharing"
+MOVIES_FILE_ID = "1l1E8VsQdMyxMumP0Y_xjsmqe8L9TW7i5"
+SIMILARITY_FILE_ID = "11inXxpuItE9VtNAzWideUADMTzMewVvT"
 
 # Download movies_dict.pkl if not exists
 if not os.path.exists("movies_dict.pkl"):
-    gdown.download(f"https://drive.google.com/uc?export=download&id={MOVIES_FILE_ID}", "movies_dict.pkl", quiet=False)
+    gdown.download(f"https://drive.google.com/uc?export=download&id={MOVIES_FILE_ID}",
+                   "movies_dict.pkl", quiet=False)
 
 # Download similarity.pkl if not exists
 if not os.path.exists("similarity.pkl"):
-    gdown.download(f"https://drive.google.com/uc?export=download&id={SIMILARITY_FILE_ID}", "similarity.pkl", quiet=False)
+    gdown.download(f"https://drive.google.com/uc?export=download&id={SIMILARITY_FILE_ID}",
+                   "similarity.pkl", quiet=False)
 
 movies_dict = pickle.load(open('movies_dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_dict)
 similarity = pickle.load(open('similarity.pkl', 'rb'))
-
-
 
 
 def fetch_poster(movie_id):
@@ -31,6 +30,7 @@ def fetch_poster(movie_id):
     )
     data = response.json()
     return "http://image.tmdb.org/t/p/w500/" + data['poster_path']
+
 
 def recommend(movie):
     movie_index = movies[movies['title'] == movie].index[0]
@@ -44,6 +44,7 @@ def recommend(movie):
         recommended_movies.append(movies.iloc[i[0]].title)
         recommended_movies_poster.append(fetch_poster(movie_id))
     return recommended_movies, recommended_movies_poster
+
 
 st.title('🎬 Movie Recommender System')
 
