@@ -45,9 +45,5 @@ Movie-Recommender-System/
 ├── Procfile
 └── README.md
 
-Edit
-streamlit run app.py
-Access in Browser
 
-Navigate to http://localhost:8501
 
