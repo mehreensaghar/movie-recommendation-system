@@ -7,8 +7,8 @@ import os
 
 
 
-MOVIES_FILE_ID = "https://drive.google.com/file/d/1l1E8VsQdMyxMumP0Y_xjsmqe8L9TW7i5/view?usp=drive_link"
-SIMILARITY_FILE_ID = "https://drive.google.com/file/d/11inXxpuItE9VtNAzWideUADMTzMewVvT/view?usp=drive_link"
+MOVIES_FILE_ID = "https://drive.google.com/file/d/1l1E8VsQdMyxMumP0Y_xjsmqe8L9TW7i5/view?usp=sharing"
+SIMILARITY_FILE_ID = "https://drive.google.com/file/d/11inXxpuItE9VtNAzWideUADMTzMewVvT/view?usp=sharing"
 
 # Download movies_dict.pkl if not exists
 if not os.path.exists("movies_dict.pkl"):
