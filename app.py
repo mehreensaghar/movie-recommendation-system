@@ -23,7 +23,7 @@ movies = pd.DataFrame(movies_dict)
 similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 
- FETCH POSTER FUNCTION
+
 
 def fetch_poster(movie_id):
     response = requests.get(
