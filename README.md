@@ -44,24 +44,7 @@ Movie-Recommender-System/
 ├── requirements.txt
 ├── Procfile
 └── README.md
-⚙️ How to Run Locally
-Clone Repository
 
-bash
-Copy
-Edit
-git clone https://github.com/username/movie-recommender-system.git
-cd movie-recommender-system
-Install Dependencies
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the App
-
-bash
-Copy
 Edit
 streamlit run app.py
 Access in Browser
